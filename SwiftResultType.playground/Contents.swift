@@ -115,6 +115,10 @@ func run() -> Result<String, CustomErrors> {
     let r = operation1()
         .flatMap { operation2($0) }
         .flatMap { operation3($0) }
+    // Update 11/16/19: You can also chain together the operations as follows:
+    //    let r = operation1()
+    //        .flatMap(operation2)
+    //        .flatMap(operation3)
 
     return r
 
